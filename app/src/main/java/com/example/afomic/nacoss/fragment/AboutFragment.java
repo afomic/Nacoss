@@ -32,9 +32,10 @@ public class AboutFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         //inflate the about view
         View v=inflater.inflate(R.layout.about_page,container,false);
-        super.onCreate(savedInstanceState);
+        //setup the toolbar
         Toolbar toolbar=(Toolbar)v.findViewById(R.id.about_toolbar);
         CollapsingToolbarLayout  collapsingToolbarLayout=(CollapsingToolbarLayout) v.findViewById(R.id.collapsing_toolbar);
         collapsingToolbarLayout.setExpandedTitleGravity(Gravity.BOTTOM);
