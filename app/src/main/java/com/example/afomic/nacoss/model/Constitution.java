@@ -1,0 +1,43 @@
+package com.example.afomic.nacoss.model;
+
+/**
+ * Created by afomic on 26-Oct-16.
+ */
+public class Constitution {
+    int article,section;
+    String content,title;
+
+    public Constitution(int article, int section,String title, String content) {
+        this.article = article;
+        this.section = section;
+        this.content = content;
+        this.title=title;
+    }
+
+    public int getSection() {
+        return section;
+    }
+    public String getTitle(){
+        return title;
+    }
+
+    public void setSection(int section) {
+        this.section = section;
+    }
+
+    public int getArticle() {
+        return article;
+    }
+
+    public void setArticle(int article) {
+        this.article = article;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+}
