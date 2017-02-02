@@ -98,8 +98,8 @@ public class GypeeCourseData {
         courses.add(new Course("MTH 205",3,3,2,1,null,"Introduction to Algebra"));
         courses.add(new Course("STT 201",3,3,2,1,null,"Introduction to Statistics"));
         courses.add(new Course("MTH 306",3,3,2,2,null,"Groups and Rings"));
-        courses.add(new Course("STT 202",3,4,2,2,null,"Probability Distribution I"));
-        courses.add(new Course("MTH 301",3,3,3,1,null,"Mathematical Methods III"));
+        courses.add(new Course("STT 202",3,3,2,2,null,"Probability Distribution I"));
+        courses.add(new Course("MTH 301",3,2,3,1,null,"Mathematical Methods III"));
         courses.add(new Course("MTH 302",3,3,3,2,null,"Mathematical Methods IV"));
         //engineering
         courses.add(new Course("CPE 303",2,2,3,1,null,"Introduction to Computer Engineering"));
