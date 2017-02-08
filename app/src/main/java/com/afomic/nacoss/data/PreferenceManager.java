@@ -11,6 +11,7 @@ import android.util.Log;
 public class PreferenceManager {
     private SharedPreferences preferences;
     private static boolean loggedIn=false;
+    private static final String IS_FIRST_TIME_LAUNCH = "IsFirstTimeLaunch";
     public PreferenceManager(Context context){
         preferences=context.getSharedPreferences(Constants.PREF_NAME, 0);
     }
@@ -86,6 +87,16 @@ public class PreferenceManager {
     }
     public boolean isThereASavedData(){
         return !(getPassword().equals("none"));
+    }
+
+    public void setFirstTimeLaunch(boolean isFirstTime) {
+        SharedPreferences.Editor editor=preferences.edit();
+        editor.putBoolean(IS_FIRST_TIME_LAUNCH, isFirstTime);
+        editor.commit();
+    }
+
+    public boolean isFirstTimeLaunch() {
+        return preferences.getBoolean(IS_FIRST_TIME_LAUNCH, true);
     }
 
 }
