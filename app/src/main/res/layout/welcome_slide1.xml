@@ -12,9 +12,10 @@
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="@dimen/img_width_height"
-            android:layout_height="@dimen/img_width_height"
-            android:src="@drawable/department_image" />
+            android:layout_width="wrap_content"
+            android:layout_margin="16dp"
+            android:src="@drawable/course_list"
+            android:layout_height="wrap_content" />
 
         <TextView
             android:layout_width="wrap_content"

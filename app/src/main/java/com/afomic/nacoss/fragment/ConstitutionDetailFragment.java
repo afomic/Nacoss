@@ -2,6 +2,7 @@ package com.afomic.nacoss.fragment;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
@@ -40,6 +41,7 @@ public class ConstitutionDetailFragment extends Fragment {
     ImageView openAndClose;
     ListView articleList;
     ScrollView scrollView;
+    View articleListLayout;
     public interface constitutionCallback{
         public void articleSelected(int section);
     }
@@ -79,10 +81,16 @@ public class ConstitutionDetailFragment extends Fragment {
         *set an onclick listener on the textview to make the list view visible
         * when its pressed
          */
+
         articleList.setAdapter(new ArticleListAdapter(getActivity()));
         articleList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if(articleList!=null){
+                    articleListLayout.setBackgroundColor(Color.WHITE);
+                }
+                view.setBackgroundColor(Color.CYAN);
+                articleListLayout=view;
                 articleList.setVisibility(View.GONE);
                 callback.articleSelected(position);
 
@@ -127,6 +135,8 @@ public class ConstitutionDetailFragment extends Fragment {
         }else {
             constitution.setText(span);
         }
+        //make the first the present article cyan so as to make it more interactive
+        articleList.getChildAt(article).setBackgroundColor(Color.CYAN);
         return v;
     }
 
