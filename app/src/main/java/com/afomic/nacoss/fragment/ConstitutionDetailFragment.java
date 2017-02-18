@@ -99,6 +99,7 @@ public class ConstitutionDetailFragment extends Fragment {
         View.OnClickListener listener=new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if(!isArticleListVisible){
                     articleList.setVisibility(View.VISIBLE);
                     openAndClose.setImageResource(R.drawable.ic_up);
@@ -136,7 +137,7 @@ public class ConstitutionDetailFragment extends Fragment {
             constitution.setText(span);
         }
         //make the first the present article cyan so as to make it more interactive
-        articleList.getChildAt(article).setBackgroundColor(Color.CYAN);
+
         return v;
     }
 
