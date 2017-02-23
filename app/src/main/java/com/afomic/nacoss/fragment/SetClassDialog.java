@@ -103,7 +103,7 @@ public class SetClassDialog extends DialogFragment {
                         dbData.addClass(item);
                         callback.classAdded();
                         TimeTableClass previousItem=dbData.getClass((time-1),date);
-                        if(previousItem==null||!item.getName().equals(previousItem.getName())){//if the previous is the same as the next, dont set alar
+                        if(previousItem==null||!item.getName().equals(previousItem.getName())){//if the previous is the same as the next, dont set alarm
                             alarm.setAlarm(item);
                         }
                         dismiss();

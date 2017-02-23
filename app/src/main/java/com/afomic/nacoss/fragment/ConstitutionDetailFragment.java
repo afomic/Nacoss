@@ -15,9 +15,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.afomic.nacoss.R;
 import com.afomic.nacoss.adapter.ArticleListAdapter;
@@ -41,7 +43,6 @@ public class ConstitutionDetailFragment extends Fragment {
     ImageView openAndClose;
     ListView articleList;
     ScrollView scrollView;
-    View articleListLayout;
     public interface constitutionCallback{
         public void articleSelected(int section);
     }
@@ -82,20 +83,17 @@ public class ConstitutionDetailFragment extends Fragment {
         * when its pressed
          */
 
-        articleList.setAdapter(new ArticleListAdapter(getActivity()));
+        articleList.setAdapter(new ArticleListAdapter(getActivity(),article));
         articleList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(articleList!=null){
-                    articleListLayout.setBackgroundColor(Color.WHITE);
-                }
-                view.setBackgroundColor(Color.CYAN);
-                articleListLayout=view;
-                articleList.setVisibility(View.GONE);
                 callback.articleSelected(position);
 
             }
         });
+
+
+
         View.OnClickListener listener=new View.OnClickListener() {
             @Override
             public void onClick(View v) {

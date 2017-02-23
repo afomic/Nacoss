@@ -31,12 +31,10 @@ import static com.afomic.nacoss.data.Constants.TAG;
  */
 
 public class TimeTableConvert {
-   private Context context;
-   private TimeTableData dbData;
+    private TimeTableData dbData;
     private NotificationService alarm;
     public TimeTableConvert(Context c){
-        context=c;
-        dbData=new TimeTableData(context);
+        dbData=new TimeTableData(c);
         alarm=new NotificationService(c);
     }
     public JSONArray toJsonArray() throws JSONException{
@@ -48,11 +46,18 @@ public class TimeTableConvert {
         return array;
     }
     public void importTimeTable(JSONArray array)throws JSONException{
-        for(int i=0;i<array.length();i++){
-            JSONObject object=array.getJSONObject(i);
-            TimeTableClass item=new TimeTableClass(object);
+        for(int i=0;i<array.length();i++) {
+            JSONObject object = array.getJSONObject(i);
+            TimeTableClass item = new TimeTableClass(object);
             dbData.addClass(item);
-            alarm.setAlarm(item);
+            if (i!= 0) {
+                TimeTableClass previousItem=new TimeTableClass(array.getJSONObject(i-1));
+                if(!item.getName().equals(previousItem.getName())){//if the previous is the same as the next, dont set alarm
+                    alarm.setAlarm(item);
+                }
+            }else{
+                alarm.setAlarm(item);
+            }
         }
     }
 
