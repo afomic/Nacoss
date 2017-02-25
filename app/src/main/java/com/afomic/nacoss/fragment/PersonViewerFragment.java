@@ -50,25 +50,9 @@ public class PersonViewerFragment extends Fragment {
         View view=inflater.inflate(R.layout.person_viewer,container,false);
         grid=(RecyclerView) view.findViewById(R.id.person_grid);
         int screenWidth= getResources().getConfiguration().screenWidthDp;
-
-        if(screenWidth<=320){
-            RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getActivity(), 2);
-            grid.setLayoutManager(mLayoutManager);
-            grid.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(5), true));
-        } else if( screenWidth>320&&screenWidth<600){
-            Toast.makeText(getActivity(),"Screen width: 0"+screenWidth,Toast.LENGTH_SHORT).show();
-            RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getActivity(),3);
-            grid.addItemDecoration(new GridSpacingItemDecoration(3, dpToPx(5), true));
-            grid.setLayoutManager(mLayoutManager);
-        }else if(screenWidth>=600&&screenWidth<800){
-            RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getActivity(),4);
-            grid.setLayoutManager(mLayoutManager);
-            grid.addItemDecoration(new GridSpacingItemDecoration(4, dpToPx(5), true));
-        }else{
-            RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getActivity(),5);
-            grid.setLayoutManager(mLayoutManager);
-            grid.addItemDecoration(new GridSpacingItemDecoration(4, dpToPx(5), true));
-        }
+        int numberOfRows=screenWidth/140;
+        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getActivity(),numberOfRows);
+        grid.setLayoutManager(mLayoutManager);
 
 
 

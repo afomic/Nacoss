@@ -8,6 +8,7 @@ import android.os.Build;
 
 
 import com.afomic.nacoss.data.Constants;
+import com.afomic.nacoss.data.TimeTableData;
 import com.afomic.nacoss.model.TimeTableClass;
 
 import java.util.Calendar;
@@ -29,6 +30,8 @@ public class NotificationService {
     }
     public void setAlarm(TimeTableClass item){
         Calendar alarmTime=getCalendar(item);
+        TimeTableClass previousClass=getPreviousSchedule(item);
+        if(previousClass!=null&&item.getName().equals(previousClass.getName())) return;
         int uniqueId=getId(item);
         long time=alarmTime.getTimeInMillis();
         long currentTime=System.currentTimeMillis();
@@ -94,6 +97,14 @@ public class NotificationService {
         }
 
     }
+    public TimeTableClass getPreviousSchedule(TimeTableClass item){
+        int time =item.getTime()-1;
+        int date=item.getDate();
+        TimeTableData dbData=new TimeTableData(context);
+        return dbData.getClass(time,date);
+    }
+
+
 
 
 

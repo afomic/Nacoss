@@ -12,11 +12,12 @@
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="@dimen/img_width_height"
-            android:layout_height="@dimen/img_width_height"
-            android:src="@drawable/splash_icon" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/timebablle" />
 
         <TextView
+            android:layout_margin="8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/slide_3_title"

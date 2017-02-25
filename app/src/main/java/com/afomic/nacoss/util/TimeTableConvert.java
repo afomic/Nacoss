@@ -50,14 +50,7 @@ public class TimeTableConvert {
             JSONObject object = array.getJSONObject(i);
             TimeTableClass item = new TimeTableClass(object);
             dbData.addClass(item);
-            if (i!= 0) {
-                TimeTableClass previousItem=new TimeTableClass(array.getJSONObject(i-1));
-                if(!item.getName().equals(previousItem.getName())){//if the previous is the same as the next, dont set alarm
-                    alarm.setAlarm(item);
-                }
-            }else{
-                alarm.setAlarm(item);
-            }
+            alarm.setAlarm(item);
         }
     }
 

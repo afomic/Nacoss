@@ -44,7 +44,7 @@ public class GypeeCourseData {
         courses.add(new Course("CPE 206",1,2,2,2,null,"Digital Laboratory I"));
         courses.add(new Course("CSC 305",1,3,3,1,null,"Introduction to Database Systems"));
         courses.add(new Course("CSC 311",1,2,3,1,null,"Introduction to Information Systems"));
-        courses.add(new Course("CSC 315",1,3,3,1,null,"Data Structures & Analysis of Algorithms"));
+        courses.add(new Course("CSC 315",1,2,3,1,null,"Data Structures & Analysis of Algorithms"));
         courses.add(new Course("CSC 317",1,2,3,1,null,"Automata Theory & Computability"));
         courses.add(new Course("CSC 304",1,2,3,2,null,"Business & Commercial Programming"));
         courses.add(new Course("CSC 312",1,2,3,2,"CPE 301","Systems Analysis & Design Methodologies"));
@@ -58,7 +58,7 @@ public class GypeeCourseData {
         courses.add(new Course("CPE 206",3,2,2,2,null,"Digital Laboratory I"));
         courses.add(new Course("CSC 305",3,3,3,1,null,"Introduction to Database Systems"));
         courses.add(new Course("CSC 311",3,2,3,1,null,"Introduction to Information Systems"));
-        courses.add(new Course("CSC 315",3,3,3,1,null,"Data Structures & Analysis of Algorithms"));
+        courses.add(new Course("CSC 315",3,2,3,1,null,"Data Structures & Analysis of Algorithms"));
         courses.add(new Course("CSC 317",3,2,3,1,null,"Automata Theory & Computability"));
         courses.add(new Course("CSC 304",3,2,3,2,null,"Business & Commercial Programming"));
         courses.add(new Course("CSC 312",3,2,3,2,"CPE 301","Systems Analysis & Design Methodologies"));
