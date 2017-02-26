@@ -14,7 +14,7 @@
       android:layout_gravity="left"
       android:background="@color/backgroundColor"
       android:orientation="vertical"
-      android:layout_width="280dp"
+      android:layout_width="300dp"
       android:layout_height="match_parent">
       <include layout="@layout/nav_header"/>
       <ListView
