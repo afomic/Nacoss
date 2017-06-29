@@ -67,7 +67,7 @@ public class NotificationService {
         alarmTime.setTimeInMillis(System.currentTimeMillis());
         alarmTime.set(Calendar.DAY_OF_WEEK,date);
         alarmTime.set(Calendar.HOUR_OF_DAY,time);
-        alarmTime.set(Calendar.MINUTE,50);
+        alarmTime.set(Calendar.MINUTE,0);
         alarmTime.set(Calendar.SECOND,0);
         alarmTime.set(Calendar.MILLISECOND,0);
         return alarmTime;
